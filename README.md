@@ -4,11 +4,11 @@ Tips for spark configuration
 HOW TO USE POOL RESOURCES MANAGEMENT IN THE SPARK JOBS ON HADOOP 
 
 java parameters
--Dmapreduce.job.queuename=queue_name
+-Dmapreduce.job.queuename=<QUEUE_NAME>
 
 spark summit parameters
-spark-submit   --queue axa_italy
-spark.yarn.queue=axa_italy
+spark-submit   --queue <QUEUE_NAME>
+spark.yarn.queue=<QUEUE_NAME>
 
 oozie
 
@@ -16,7 +16,7 @@ oozie
         <configuration>
             <property>
                 <name>mapreduce.job.queuename</name>
-                <value>${queueName}</value>
+                <value><QUEUE_NAME></value>
             </property>
         </configuration>
     </global>
@@ -24,7 +24,7 @@ oozie
 	
 
 query	
-•	Spark : --queue axa_italy (for example spark-submit   --queue axa_italy)
-•	Hive : set mapreduce.job.queuename=axa_italy (add this in your hql script)
-•	Impala : SET REQUEST_POOL=(add this in your sql script)
+•	Spark : --queue <QUEUE_NAME> (for example spark-submit   --queue <QUEUE_NAME>)
+•	Hive : set mapreduce.job.queuename=<QUEUE_NAME> (add this in your hql script)
+•	Impala : SET REQUEST_POOL=<QUEUE_NAME>
 •	Oozie : mapreduce.job.queuename
